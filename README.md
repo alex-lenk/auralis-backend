@@ -1,8 +1,8 @@
-# MicroSpark
+# auralis-backend
 ### Структура проекта
 
 ```
- fastify-backend
+ root
  │── audio/
  │── src/
  │   ├── config/
