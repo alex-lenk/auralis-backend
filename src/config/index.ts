@@ -1,4 +1,4 @@
-// src/config.ts
+// src/config/config.ts
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -10,6 +10,7 @@ export const config = {
   backendPort: Number(process.env.BACKEND_PORT) || 6000,
   JWT_SECRET: process.env.JWT_SECRET || 'supersecret',
   JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET || 'supersecret',
+  DATABASE_URL: process.env.DB_PASSWORD,
   DB_USER: process.env.DB_USER,
   DB_PASSWORD: process.env.DB_PASSWORD,
   DB_HOST: process.env.DB_HOST,
