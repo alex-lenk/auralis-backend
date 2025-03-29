@@ -8,7 +8,7 @@ export async function generatePlaylist(mode: string, hour: number): Promise<stri
   // Циклим по ~ 1440 трекам через modulo.
 
   const startSegment = (hour * SEGMENTS_PER_PLAYLIST) % TOTAL_SEGMENTS
-  const baseUrl = `${config.backendUrl}/audio`
+  const baseUrl = `${ config.cdnUrl }/audio`
 
   let playlist = `#EXTM3U
 #EXT-X-PLAYLIST-TYPE:VOD
