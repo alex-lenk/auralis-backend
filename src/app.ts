@@ -1,7 +1,5 @@
 // src/app.ts
-import path from 'path'
 import Fastify from 'fastify'
-import fastifyStatic from '@fastify/static'
 import rateLimit from '@fastify/rate-limit'
 import cors from '@fastify/cors'
 import sensible from '@fastify/sensible'
@@ -28,11 +26,6 @@ app.register(cors, {
 app.register(sensible)
 
 app.register(drizzlePlugin)
-
-app.register(fastifyStatic, {
-  root: path.join(__dirname, '..', 'audio'),
-  prefix: '/audio/',
-})
 
 // Регистрация маршрутов
 app.register(authRoutes)
