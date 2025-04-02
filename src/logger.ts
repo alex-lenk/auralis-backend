@@ -1,33 +1,33 @@
 // src/logger.ts
-import path from 'path';
-import dayjs from 'dayjs';
-import pino from 'pino';
+import path from 'path'
+import dayjs from 'dayjs'
+import pino from 'pino'
 
-const logFileName = `${dayjs().format('YYYY-MM-DD')}.log`;
-const logFilePath = path.join(__dirname, '../logs', logFileName);
+const logFileName = `${ dayjs().format('YYYY-MM-DD') }.log`
+const logFilePath = path.join(__dirname, '../logs', logFileName)
 
 export const logger = pino(
   {
-    level: 'info',
+    level: 'error',
     serializers: {
       req(request) {
         return {
           method: request.method,
           url: request.url,
           ip: request.ip,
-        };
+        }
       },
       res(reply) {
         return {
           statusCode: reply.statusCode,
-        };
+        }
       },
       err(error) {
         return {
           type: error.name,
           message: error.message,
           stack: error.stack || '',
-        };
+        }
       },
     },
   },
@@ -46,5 +46,5 @@ export const logger = pino(
         },
       },
     ],
-  })
-);
+  }),
+)
