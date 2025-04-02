@@ -85,7 +85,7 @@ CREATE TABLE anonymous_users (
     id SERIAL PRIMARY KEY,
     user_id UUID DEFAULT gen_random_uuid() UNIQUE NOT NULL,
     fingerprint VARCHAR(255) UNIQUE NOT NULL,
-        user_data JSONB NOT NULL,
+    user_data JSONB NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
