@@ -1,17 +1,19 @@
+// src/db/schema/playlist.schema.ts
+
 export const playlistSchema = {
   params: {
     type: 'object',
     properties: {
-      mode: {type: 'string'}
+      mode: { type: 'string' },
     },
-    required: ['mode']
+    required: ['mode'],
   },
   querystring: {
     type: 'object',
     properties: {
-      hour: {type: 'string', pattern: '^[0-9]+$'},
-      fingerprint: {type: 'string'}
+      start: { type: 'string', pattern: '^[0-9]+$' },
+      fingerprint: { type: 'string' },
     },
-    required: ['fingerprint']
-  }
+    required: ['fingerprint'],
+  },
 }
