@@ -6,21 +6,21 @@ import { getAnonymousUserByFingerprint } from '../repositories/anonymousUser.rep
 
 export async function getPlaylist(req: FastifyRequest<{
   Params: { mode: string },
-  Querystring: { start?: string, fingerprint?: string }
+  Querystring: { start?: string, deviceId?: string }
 }>, reply: FastifyReply) {
   const { mode } = req.params
-  const fingerprint = req.query.fingerprint
+  const deviceId = req.query.deviceId
   // Если start не указан, начинаем с 0
   const startSegment = parseInt(req.query.start ?? '0', 10)
 
-  if (!fingerprint) {
+  if (!deviceId) {
     return reply.status(400).send({ error: 'Fingerprint is required' })
   }
 
-  // Проверяем fingerprint
-  const user = await getAnonymousUserByFingerprint(fingerprint)
+  // Проверяем deviceId
+  const user = await getAnonymousUserByFingerprint(deviceId)
   if (!user) {
-    return reply.status(403).send({ error: 'Access denied. Invalid fingerprint' })
+    return reply.status(403).send({ error: 'Access denied. Invalid deviceId' })
   }
 
   try {

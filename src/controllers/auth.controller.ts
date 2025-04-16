@@ -17,13 +17,13 @@ import { generateRandomPassword } from '../utils/generateRandomPassword'
 
 export const registerAnonymous = async (req: FastifyRequest, reply: FastifyReply) => {
   try {
-    const {fingerprint, userData} = req.body as {fingerprint: string; userData?: object}
+    const {fingerprint, deviceId, userData} = req.body as {fingerprint: string; deviceId: string; userData?: object}
 
-    if (!fingerprint) {
+    if (!deviceId) {
       return reply.badRequest('Fingerprint is required')
     }
 
-    await registerAnonymousUser(fingerprint, userData)
+    await registerAnonymousUser(fingerprint, deviceId, userData)
 
     return reply.status(204).send()
   } catch (error) {

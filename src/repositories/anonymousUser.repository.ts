@@ -3,16 +3,16 @@ import { eq } from 'drizzle-orm'
 import { anonymousUsers } from '../db/schema/anonymousUsers'
 import db from '../db'
 
-export const getAnonymousUserByFingerprint = async (fingerprint: string) => {
+export const getAnonymousUserByFingerprint = async (deviceId: string) => {
   const result = await db.select()
     .from(anonymousUsers)
-    .where(eq(anonymousUsers.fingerprint, fingerprint))
+    .where(eq(anonymousUsers.deviceId, deviceId))
   return result[0] || null
 }
 
-export const createAnonymousUser = async (fingerprint: string, userData?: object) => {
+export const createAnonymousUser = async (fingerprint: string, deviceId: string, userData?: object) => {
   const [user] = await db.insert(anonymousUsers)
-    .values({fingerprint, userData})
+    .values({fingerprint, deviceId, userData})
     .returning()
   return user
 }

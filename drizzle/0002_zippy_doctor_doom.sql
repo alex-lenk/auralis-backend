@@ -1,0 +1,1 @@
+ALTER TABLE "anonymous_users" ALTER COLUMN "fingerprint" SET DATA TYPE varchar(70);

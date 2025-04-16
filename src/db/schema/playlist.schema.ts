@@ -12,8 +12,8 @@ export const playlistSchema = {
     type: 'object',
     properties: {
       start: { type: 'string', pattern: '^[0-9]+$' },
-      fingerprint: { type: 'string' },
+      deviceId: { type: 'string' },
     },
-    required: ['fingerprint'],
+    required: ['deviceId'],
   },
 }

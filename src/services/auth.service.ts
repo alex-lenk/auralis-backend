@@ -18,11 +18,11 @@ import {
   generateRefreshToken
 } from '../utils/token'
 
-export const registerAnonymousUser = async (fingerprint: string, userData?: object) => {
-  let user = await getAnonymousUserByFingerprint(fingerprint)
+export const registerAnonymousUser = async (fingerprint: string, deviceId: string, userData?: object) => {
+  let user = await getAnonymousUserByFingerprint(deviceId)
 
   if (!user) {
-    user = await createAnonymousUser(fingerprint, userData)
+    user = await createAnonymousUser(fingerprint, deviceId, userData)
   }
 
   return user
