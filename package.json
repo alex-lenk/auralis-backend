@@ -1,6 +1,6 @@
 {
   "name": "auralis-backend",
-  "version": "1.5.0",
+  "version": "1.5.8",
   "author": "AlexLenk",
   "description": "backend for auralis project",
   "scripts": {
@@ -25,12 +25,12 @@
     "@types/nodemailer": "^6.4.17",
     "bcrypt": "^5.1.1",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.41.0",
-    "fastify": "^5.2.2",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.42.0",
+    "fastify": "^5.3.0",
     "fastify-decorators": "^3.16.1",
     "jsonwebtoken": "^9.0.2",
-    "nodemailer": "^6.10.0",
+    "nodemailer": "^6.10.1",
     "pg": "^8.14.1",
     "pg-promise": "^11.13.0",
     "pino": "^9.6.0",
@@ -39,13 +39,13 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.9",
-    "@types/node": "^22.13.17",
-    "@types/pg": "^8.11.11",
-    "drizzle-kit": "^0.30.6",
+    "@types/node": "^22.14.1",
+    "@types/pg": "^8.11.13",
+    "drizzle-kit": "^0.31.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "keywords": [],
   "license": "ISC"
