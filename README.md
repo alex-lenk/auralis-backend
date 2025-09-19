@@ -1,4 +1,11 @@
 # auralis-backend
+
+### ⚡ Backend (Fastify 5.6 + Drizzle ORM 0.44 + PostgreSQL 16)
+- Строгая типизация (DTOs, типы запросов/ответов, TS 5.9).
+- **Drizzle ORM 0.44** (+ **drizzle-kit 0.31** для миграций).
+- **JWT**, rate-limit, **email-confirmation** — чисто и изолировано.
+- Логирование и ошибки через **pino 9** + `fastify-sensible`.
+
 ### Структура проекта
 
 ```
