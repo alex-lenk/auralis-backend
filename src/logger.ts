@@ -1,4 +1,3 @@
-// src/logger.ts
 import path from 'path'
 import dayjs from 'dayjs'
 import pino from 'pino'

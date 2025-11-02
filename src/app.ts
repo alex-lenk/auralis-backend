@@ -25,8 +25,8 @@ app.register(sensible);
 
 app.register(drizzlePlugin);
 
-// Регистрация маршрутов
-app.register(authRoutes, streamRoutes);
+app.register(authRoutes)
+app.register(streamRoutes)
 
 const start = async () => {
   try {

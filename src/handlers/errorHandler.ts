@@ -1,4 +1,3 @@
-// src/handlers/error.handler.ts
 import { FastifyError, FastifyReply, FastifyRequest } from 'fastify'
 
 export const customErrorHandler = (error: FastifyError, request: FastifyRequest, reply: FastifyReply) => {

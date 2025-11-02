@@ -1,4 +1,3 @@
-// src/types/fastify.d.ts
 import { NodePgDatabase } from 'drizzle-orm/node-postgres'
 import { FastifyInstance } from 'fastify'
 

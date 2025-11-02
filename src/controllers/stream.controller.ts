@@ -1,5 +1,3 @@
-// src/controllers/stream.controller.ts
-
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { generatePlaylist } from '../services/stream.service'
 import { getAnonymousUserByFingerprint } from '../repositories/anonymousUser.repository'
@@ -10,14 +8,12 @@ export async function getPlaylist(req: FastifyRequest<{
 }>, reply: FastifyReply) {
   const { mode } = req.params
   const deviceId = req.query.deviceId
-  // Если start не указан, начинаем с 0
   const startSegment = parseInt(req.query.start ?? '0', 10)
 
   if (!deviceId) {
     return reply.status(400).send({ error: 'Fingerprint is required' })
   }
 
-  // Проверяем deviceId
   const user = await getAnonymousUserByFingerprint(deviceId)
   if (!user) {
     return reply.status(403).send({ error: 'Access denied. Invalid deviceId' })
