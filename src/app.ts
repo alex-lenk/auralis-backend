@@ -1,4 +1,3 @@
-// src/app.ts
 import Fastify from 'fastify'
 import rateLimit from '@fastify/rate-limit'
 import cors from '@fastify/cors'
@@ -27,7 +26,6 @@ app.register(sensible)
 
 app.register(drizzlePlugin)
 
-// Регистрация маршрутов
 app.register(authRoutes)
 app.register(streamRoutes)
 

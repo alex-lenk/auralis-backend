@@ -1,5 +1,3 @@
-// src/services/stream.service.ts
-
 import { config } from '../config'
 
 const TOTAL_SEGMENTS = 1440 // 24 часа по 60 сек
@@ -23,7 +21,6 @@ export async function generatePlaylist(mode: string, startSegment: number): Prom
 
   for (let i = 0; i < SEGMENTS_PER_PLAYLIST; i++) {
     const index = (startSegment + i) % TOTAL_SEGMENTS
-    // Пример имени файлов: relax_60s_0123.aac
     playlist += `#EXTINF:60,\n${ baseUrl }/${ mode }_60s_${ String(index).padStart(4, '0') }.aac\n`
   }
 

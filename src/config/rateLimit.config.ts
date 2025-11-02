@@ -1,4 +1,3 @@
-// src/config/rateLimit.config.ts
 export const globalRateLimit = {
   global: true,
   max: 100,

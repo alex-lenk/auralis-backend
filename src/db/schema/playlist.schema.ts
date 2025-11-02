@@ -1,5 +1,3 @@
-// src/db/schema/playlist.schema.ts
-
 export const playlistSchema = {
   params: {
     type: 'object',
